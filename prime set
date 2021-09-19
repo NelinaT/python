@@ -1,0 +1,30 @@
+# Намерете следващото просто число, за което е изпълнено, че конкатенацията на всеки 2 е просто число
+import math
+def is_prime(p):
+    for i in range(2,p):
+        if p%i==0:
+            return False
+    return True
+def concat(a,b):
+    return int(math.pow(10,(int(math.log(b,10)) + 1)) * a + b)
+lis=[3, 7, 109]
+i=109
+count=0
+print(is_prime(25241))
+while len(lis)==3:
+    i+=3
+    d=concat(i,lis[2])
+    f=concat(lis[2],i)
+    print(d," ",f)
+    if is_prime(i) and is_prime(d) and is_prime(f):
+        count=0
+        for j in lis:
+            if is_prime(concat(i,j)) and is_prime(concat(j,i)):
+                count+=1
+                print("count if1",count," ", concat(i,j))
+            else:
+                count=0
+        if count==3:
+            lis.append(i)
+             
+print(lis)   
