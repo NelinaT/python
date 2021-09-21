@@ -1,3 +1,12 @@
+The prime 41, can be written as the sum of six consecutive primes:
+
+41 = 2 + 3 + 5 + 7 + 11 + 13
+This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+
+The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+
+Which prime, below one-million, can be written as the sum of the most consecutive primes?
+=======================================================================================================================================
 def Is_Prime(n):
     for i in range(2,n):
         if n%i==0:
@@ -32,6 +41,35 @@ for i, p in enumerate(primes):
 				lastPrimeIndex = c
 		else:
 			break
+============================================================================================================================================================
+second way:
+	from sympy import *
+import time
+print "Hello World!\n"
+
+
+def alg(n):
+    primes =[]
+    i=2
+    while sum(primes)<n:
+        if isprime(i):
+            primes.append(i)
+        i=i+1
+    fin_seq=[];l=len(primes);j=l
+    while j!= 0:
+        i=0
+        while i+j<l+1:
+            seq = primes[i:i+j]
+            if sum(seq)<=n:
+                if isprime(sum(seq)):
+                    if len(seq)>len(fin_seq):
+                        fin_seq = seq
+            i=i+1
+        j=j-1
+    return(sum(fin_seq))
+    start = time.time()
+print(alg(1000000))
+print('In '+ str(time.time()-start)+ ' seconds')
 
 	sum = 0
 
