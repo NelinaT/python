@@ -1,0 +1,15 @@
+def sum_of_squares(number):
+    product=0
+    i=0
+    while i<=number:
+        product += pow(i,2)
+        i += 1
+    return product
+def squared_sum(number):
+    product=0
+    i=0
+    while i<=number:
+        product +=i
+        i +=1
+    return pow(product,2)
+print(squared_sum(100)-sum_of_squares(100))
