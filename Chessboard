@@ -1,0 +1,24 @@
+import turtle
+def square(distance):
+    for i in range(4):
+        turtle.right(90)
+        turtle.forward(distance)
+for k in range(4):
+    turtle.goto(-100, 100 * k )
+    for j in range(2):
+        for i in range(4):
+            turtle.begin_fill()
+            turtle.color("black")
+            turtle.forward(50)
+            square(50)
+            turtle.end_fill()
+            turtle.begin_fill()
+            turtle.pencolor("black")
+            turtle.color("green")
+            turtle.forward(50)
+            square(50)
+            turtle.end_fill()
+        turtle.right(90)
+        turtle.forward(100)
+        turtle.right(90)
+turtle.done()
