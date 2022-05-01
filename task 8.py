@@ -9,7 +9,5 @@ for i in range(986):
         pr*=diggit
         
     if product < pr:
-        product=pr   
-        print(i)
-        print(num[i]) 
+        product=pr    
 print(product)
